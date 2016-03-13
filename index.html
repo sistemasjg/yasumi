@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Yasumi by azuyalabs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Yasumi</h1>
+      <h2 class="project-tagline">Yasumi is an easy PHP Library for calculating national holidays.</h2>
+      <a href="https://github.com/azuyalabs/yasumi" class="btn">View on GitHub</a>
+      <a href="https://github.com/azuyalabs/yasumi/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/azuyalabs/yasumi/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <p><a href="https://packagist.org/packages/azuyalabs/yasumi"><img src="https://poser.pugx.org/azuyalabs/yasumi/v/stable.svg" alt="Latest Stable Version"></a> <a href="https://packagist.org/packages/azuyalabs/yasumi"><img src="https://poser.pugx.org/azuyalabs/yasumi/downloads.svg" alt="Total Downloads"></a> <a href="https://packagist.org/packages/azuyalabs/yasumi"><img src="https://poser.pugx.org/azuyalabs/yasumi/v/unstable.svg" alt="Latest Unstable Version"></a> <a href="https://packagist.org/packages/azuyalabs/yasumi"><img src="https://poser.pugx.org/azuyalabs/yasumi/license.svg" alt="License"></a> <a href="https://travis-ci.org/azuyalabs/yasumi"><img src="https://travis-ci.org/azuyalabs/yasumi.svg?branch=master" alt="Build Status"></a></p>
+
+<h1>
+<a id="yasumi" class="anchor" href="#yasumi" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Yasumi</h1>
+
+<p>Yasumi (Japanese for 'Holiday') is an easy PHP library to help you calculate the dates and names of holidays and other
+special celebrations from various countries/states. Many services exist on the internet that provide holidays, however
+are either not free or offer only limited information. In addition, no complete PHP library seems to exist today
+that covers a wide range of holidays and countries, except maybe PEAR's Date_Holidays which unfortunately hasn't been
+updated for a while.</p>
+
+<p>The goal of Yasumi is to be powerful while remaining lightweight, by utilizing PHP native classes wherever possible.
+Yasumi's calculation is provider-based (i.e. by country/state) so it is easy to add new holiday providers that calculate
+holidays. The methods of Yasumi can be used to get a holiday's date and name in various languages.</p>
+
+<h2>
+<a id="highlights" class="anchor" href="#highlights" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Highlights</h2>
+
+<ul>
+<li>Simple API</li>
+<li>Use of Providers to easily extend and expand new Holidays</li>
+<li>Common Holiday Providers</li>
+<li>Global Translations</li>
+<li>Implements ArrayIterator to easily process a provider's holidays</li>
+<li>Filters enabling to easily select certain holiday types (Official, Observed, Bank, Seasonal or Other) </li>
+<li>Fully documented</li>
+<li>Fully Unit tested</li>
+<li>Framework-agnostic</li>
+<li>Composer ready, <a href="http://www.php-fig.org/psr/psr-2/">PSR-2</a> compliant</li>
+</ul>
+
+<p>Currently the following holiday providers are implemented:</p>
+
+<ul>
+<li>Japan</li>
+<li>Netherlands</li>
+<li>Belgium</li>
+<li>USA</li>
+<li>Italy</li>
+<li>France</li>
+<li>Spain (including the autonomous communities Andalusia, Aragon, Asturias, Balearic Islands, Basque Country, 
+     Canary Islands, Cantabria, Castile and León, Castilla-La Mancha, Ceuta, Community of Madrid, Extremadura, 
+     Galicia, La Rioja, Melilla, Navarre, Region of Murcia, Valencian Community)</li>
+<li>Denmark</li>
+</ul>
+
+<p>Yasumi has the following filters to allow you to filter only certain type of holidays:</p>
+
+<ul>
+<li>Official</li>
+<li>Observed</li>
+<li>Bank</li>
+<li>Seasonal</li>
+<li>Other</li>
+</ul>
+
+<h2>
+<a id="system-requirements" class="anchor" href="#system-requirements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>System Requirements</h2>
+
+<p>You need <strong>PHP &gt;= 5.5.0</strong> to use <code>azuyalabs/yasumi</code> but the latest stable version of PHP is recommended.
+Yasumi is verified and tested on PHP 5.5, 5.6 and 7.0.</p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>Install <code>azuyalabs/yasumi</code> using Composer.</p>
+
+<pre><code>$ composer require azuyalabs/yasumi
+</code></pre>
+
+<h2>
+<a id="testing" class="anchor" href="#testing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Testing</h2>
+
+<p>Yasumi has a <a href="https://phpunit.de/">PHPUnit</a> test suite. To run the tests, run the following command from the project 
+folder:</p>
+
+<div class="highlight highlight-source-shell"><pre>$ phpunit</pre></div>
+
+<p>Yasumi has over 900 unit tests with multiple iterations of assertions. Since Yasumi is using randomized years for asserting
+the holidays, multiple iterations of assertions are executed to ensure the holidays are calculated in a large number
+of years.</p>
+
+<p>The tests are organized in some test suites to make testing a bit more easier:</p>
+
+<ul>
+<li>Base       : For testing the base functionality of Yasumi</li>
+<li>Japan      : For separately testing the Japan Holiday Provider</li>
+<li>Netherlands: For separately testing the Netherlands Holiday Provider</li>
+<li>Belgium    : For separately testing the Belgium Holiday Provider</li>
+<li>USA        : For separately testing the USA Holiday Provider</li>
+<li>Italy      : For separately testing the Italy Holiday Provider</li>
+<li>France     : For separately testing the France Holiday Provider</li>
+<li>Spain      : For separately testing the Spain Holiday Provider</li>
+<li>Denmark    : For separately testing the Denmark Holiday Provider</li>
+</ul>
+
+<h2>
+<a id="basic-usage" class="anchor" href="#basic-usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Basic Usage</h2>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-pse">&lt;?php</span><span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c">// Require the composer auto loader</span></span>
+<span class="pl-s1"><span class="pl-k">require</span> <span class="pl-s"><span class="pl-pds">'</span>vendor/autoload.php<span class="pl-pds">'</span></span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">Yasumi\Yasumi</span>;</span>
+<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">Yasumi\Filters\OfficialHolidaysFilter</span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c">// Use the factory to create a new holiday provider instance</span></span>
+<span class="pl-s1"><span class="pl-smi">$holidays</span> <span class="pl-k">=</span> <span class="pl-c1">Yasumi</span><span class="pl-k">::</span>create(<span class="pl-s"><span class="pl-pds">'</span>USA<span class="pl-pds">'</span></span>, <span class="pl-c1">2016</span>);</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c">// Get the number of defined holidays</span></span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-smi">$holidays</span><span class="pl-k">-&gt;</span>count() <span class="pl-k">.</span> <span class="pl-c1">PHP_EOL</span>;</span>
+<span class="pl-s1"><span class="pl-c">// 11</span></span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c">// Get a list all of the holiday names (short names)</span></span>
+<span class="pl-s1"><span class="pl-k">foreach</span> (<span class="pl-smi">$holidays</span><span class="pl-k">-&gt;</span>getHolidayNames() <span class="pl-k">as</span> <span class="pl-smi">$name</span>) {</span>
+<span class="pl-s1">    <span class="pl-c1">echo</span> <span class="pl-smi">$name</span> <span class="pl-k">.</span> <span class="pl-c1">PHP_EOL</span>;</span>
+<span class="pl-s1">}</span>
+<span class="pl-s1"><span class="pl-c">// 'newYearsDay'</span></span>
+<span class="pl-s1"><span class="pl-c">// 'martinLutherKingDay'</span></span>
+<span class="pl-s1"><span class="pl-c">// 'washingtonsBirthday'</span></span>
+<span class="pl-s1"><span class="pl-c">// 'memorialDay'</span></span>
+<span class="pl-s1"><span class="pl-c">// 'substituteHoliday:independenceDay'</span></span>
+<span class="pl-s1"><span class="pl-c">// 'independenceDay'</span></span>
+<span class="pl-s1"><span class="pl-c">// 'labourDay'</span></span>
+<span class="pl-s1"><span class="pl-c">// 'columbusDay'</span></span>
+<span class="pl-s1"><span class="pl-c">// 'veteransDay'</span></span>
+<span class="pl-s1"><span class="pl-c">// 'thanksgivingDay'</span></span>
+<span class="pl-s1"><span class="pl-c">// 'christmasDay'</span></span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c">// Get a list all of the holiday dates</span></span>
+<span class="pl-s1"><span class="pl-k">foreach</span> (<span class="pl-smi">$holidays</span><span class="pl-k">-&gt;</span>getHolidayDates() <span class="pl-k">as</span> <span class="pl-smi">$date</span>) {</span>
+<span class="pl-s1">    <span class="pl-c1">echo</span> <span class="pl-smi">$date</span> <span class="pl-k">.</span> <span class="pl-c1">PHP_EOL</span>;</span>
+<span class="pl-s1">}</span>
+<span class="pl-s1"><span class="pl-c">// 2016-01-01</span></span>
+<span class="pl-s1"><span class="pl-c">// 2016-01-18</span></span>
+<span class="pl-s1"><span class="pl-c">// 2016-02-15</span></span>
+<span class="pl-s1"><span class="pl-c">// 2016-05-30</span></span>
+<span class="pl-s1"><span class="pl-c">// 2016-07-04</span></span>
+<span class="pl-s1"><span class="pl-c">// 2016-09-05</span></span>
+<span class="pl-s1"><span class="pl-c">// 2016-10-10</span></span>
+<span class="pl-s1"><span class="pl-c">// 2016-11-11</span></span>
+<span class="pl-s1"><span class="pl-c">// 2016-11-24</span></span>
+<span class="pl-s1"><span class="pl-c">// 2016-12-25</span></span>
+<span class="pl-s1"><span class="pl-c">// 2016-12-26</span></span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c">// Get a holiday object for Independence Day</span></span>
+<span class="pl-s1"><span class="pl-smi">$independenceDay</span> <span class="pl-k">=</span> <span class="pl-smi">$holidays</span><span class="pl-k">-&gt;</span>getHoliday(<span class="pl-s"><span class="pl-pds">'</span>independenceDay<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c">// Get the localized name</span></span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-smi">$independenceDay</span><span class="pl-k">-&gt;</span>getName() <span class="pl-k">.</span> <span class="pl-c1">PHP_EOL</span>;</span>
+<span class="pl-s1"><span class="pl-c">// 'Independence Day'</span></span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c">// Get the date</span></span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-smi">$independenceDay</span> <span class="pl-k">.</span> <span class="pl-c1">PHP_EOL</span>;</span>
+<span class="pl-s1"><span class="pl-c">// '2016-07-04'</span></span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c">// Get the type of holiday</span></span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-smi">$independenceDay</span><span class="pl-k">-&gt;</span>getType() <span class="pl-k">.</span> <span class="pl-c1">PHP_EOL</span>;</span>
+<span class="pl-s1"><span class="pl-c">// 'national'</span></span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c">// Print the holiday as a JSON object</span></span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-c1">json_encode</span>(<span class="pl-smi">$independenceDay</span>, <span class="pl-c1">JSON_PRETTY_PRINT</span>);</span>
+<span class="pl-s1"><span class="pl-c">// {</span></span>
+<span class="pl-s1"><span class="pl-c">//    "shortName": "independenceDay",</span></span>
+<span class="pl-s1"><span class="pl-c">//    "translations": {</span></span>
+<span class="pl-s1"><span class="pl-c">//    "en_US": "Independence Day"</span></span>
+<span class="pl-s1"><span class="pl-c">//    },</span></span>
+<span class="pl-s1"><span class="pl-c">//    "date": "2016-07-04 00:00:00.000000",</span></span>
+<span class="pl-s1"><span class="pl-c">//    "timezone_type": 3,</span></span>
+<span class="pl-s1"><span class="pl-c">//    "timezone": "America\/New_York"</span></span>
+<span class="pl-s1"><span class="pl-c">// }</span></span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c">// Retrieve only the official holidays for the Netherlands in 2014</span></span>
+<span class="pl-s1"><span class="pl-smi">$holidays</span> <span class="pl-k">=</span> <span class="pl-c1">Yasumi</span><span class="pl-k">::</span>create(<span class="pl-s"><span class="pl-pds">'</span>Netherlands<span class="pl-pds">'</span></span>, <span class="pl-c1">2014</span>);</span>
+<span class="pl-s1"><span class="pl-smi">$official</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">OfficialHolidaysFilter</span>(<span class="pl-smi">$holidays</span><span class="pl-k">-&gt;</span>getIterator());</span>
+<span class="pl-s1"><span class="pl-k">foreach</span> (<span class="pl-smi">$official</span> <span class="pl-k">as</span> <span class="pl-smi">$day</span>) {</span>
+<span class="pl-s1">    <span class="pl-c1">echo</span> <span class="pl-smi">$day</span><span class="pl-k">-&gt;</span>getName() <span class="pl-k">.</span> <span class="pl-c1">PHP_EOL</span>;</span>
+<span class="pl-s1">}</span>
+<span class="pl-s1"><span class="pl-c">// 'New Year's Day'</span></span>
+<span class="pl-s1"><span class="pl-c">// 'Easter Sunday'</span></span>
+<span class="pl-s1"><span class="pl-c">// 'Easter Monday'</span></span>
+<span class="pl-s1"><span class="pl-c">// 'Kings Day'</span></span>
+<span class="pl-s1"><span class="pl-c">// 'Ascension Day'</span></span>
+<span class="pl-s1"><span class="pl-c">// 'Whitsunday'</span></span>
+<span class="pl-s1"><span class="pl-c">// 'Whitmonday'</span></span>
+<span class="pl-s1"><span class="pl-c">// 'Christmas'</span></span>
+<span class="pl-s1"><span class="pl-c">// 'Boxing Day'</span></span></pre></div>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+
+<p>The MIT License (MIT). Please see <a href="LICENSE">LICENSE</a> for more information.</p>
+
+<h2>
+<a id="information-sources" class="anchor" href="#information-sources" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Information Sources</h2>
+
+<ul>
+<li>Wikipedia</li>
+<li>Timeanddate</li>
+<li>Unicode</li>
+</ul>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/azuyalabs/yasumi">Yasumi</a> is maintained by <a href="https://github.com/azuyalabs">azuyalabs</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
