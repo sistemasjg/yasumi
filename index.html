@@ -47,6 +47,8 @@ holidays. The methods of Yasumi can be used to get a holiday's date and name in 
 <li>Fully documented</li>
 <li>Fully Unit tested</li>
 <li>Framework-agnostic</li>
+<li>Timezone aware; holidays are calculated for the timezone they apply to</li>
+<li>Accounts for the date/time when holidays have been officially established and/or abolished</li>
 <li>Composer ready, <a href="http://www.php-fig.org/psr/psr-2/">PSR-2</a> compliant</li>
 </ul>
 
@@ -62,6 +64,10 @@ holidays. The methods of Yasumi can be used to get a holiday's date and name in 
 <li>Spain (including the autonomous communities Andalusia, Aragon, Asturias, Balearic Islands, Basque Country, 
      Canary Islands, Cantabria, Castile and León, Castilla-La Mancha, Ceuta, Community of Madrid, Extremadura, 
      Galicia, La Rioja, Melilla, Navarre, Region of Murcia, Valencian Community)</li>
+<li>Denmark</li>
+<li>Norway</li>
+<li>Sweden</li>
+<li>Finland</li>
 </ul>
 
 <p>Yasumi has the following filters to allow you to filter only certain type of holidays:</p>
@@ -74,10 +80,15 @@ holidays. The methods of Yasumi can be used to get a holiday's date and name in 
 <li>Other</li>
 </ul>
 
+<p>Yasumi focuses initially on a country's official holidays and non-working days. If time permits, other type of holidays
+will be added. The goal is to issue a new release every month and targeting to have at least 2 new holiday providers in
+each release :)</p>
+
 <h2>
 <a id="system-requirements" class="anchor" href="#system-requirements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>System Requirements</h2>
 
-<p>You need <strong>PHP &gt;= 5.5.0</strong> to use <code>azuyalabs/yasumi</code> but the latest stable version of PHP is recommended.</p>
+<p>You need <strong>PHP &gt;= 5.5.0</strong> to use <code>azuyalabs/yasumi</code> but the latest stable version of PHP is recommended.
+Yasumi is verified and tested on PHP 5.5, 5.6 and 7.0.</p>
 
 <h2>
 <a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
@@ -95,7 +106,7 @@ folder:</p>
 
 <div class="highlight highlight-source-shell"><pre>$ phpunit</pre></div>
 
-<p>Yasumi has over 700 unit tests with multiple iterations of assertions. Since Yasumi is using randomized years for asserting
+<p>Yasumi has over 1100 unit tests with multiple iterations of assertions. Since Yasumi is using randomized years for asserting
 the holidays, multiple iterations of assertions are executed to ensure the holidays are calculated in a large number
 of years.</p>
 
@@ -110,6 +121,10 @@ of years.</p>
 <li>Italy      : For separately testing the Italy Holiday Provider</li>
 <li>France     : For separately testing the France Holiday Provider</li>
 <li>Spain      : For separately testing the Spain Holiday Provider</li>
+<li>Denmark    : For separately testing the Denmark Holiday Provider</li>
+<li>Norway     : For separately testing the Norway Holiday Provider</li>
+<li>Sweden     : For separately testing the Sweden Holiday Provider</li>
+<li>Finland    : For separately testing the Finland Holiday Provider</li>
 </ul>
 
 <h2>
@@ -208,6 +223,20 @@ of years.</p>
 <a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
 
 <p>The MIT License (MIT). Please see <a href="LICENSE">LICENSE</a> for more information.</p>
+
+<h2>
+<a id="information-sources" class="anchor" href="#information-sources" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Information Sources</h2>
+
+<ul>
+<li>
+<a href="https://en.wikipedia.org/wiki/Main_Page">Wikipedia</a> </li>
+<li>
+<a href="http://www.timeanddate.com/">Timeanddate.com</a><br>
+</li>
+<li>
+<a href="http://cldr.unicode.org/">CLDR - Unicode Common Locale Data Repository</a><br>
+</li>
+</ul>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/azuyalabs/yasumi">Yasumi</a> is maintained by <a href="https://github.com/azuyalabs">azuyalabs</a>.</span>
