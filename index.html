@@ -27,8 +27,8 @@
 <p>Yasumi (Japanese for 'Holiday') is an easy PHP library to help you calculate the dates and names of holidays and other
 special celebrations from various countries/states. Many services exist on the internet that provide holidays, however
 are either not free or offer only limited information. In addition, no complete PHP library seems to exist today
-that covers a wide range of holidays and countries, except maybe PEAR's Date_Holidays which unfortunately hasn't been
-updated for a while.</p>
+that covers a wide range of holidays and countries, except maybe <a href="https://pear.php.net/package/Date_Holidays">PEAR's Date_Holidays</a> 
+which unfortunately hasn't been updated for a long time.</p>
 
 <p>The goal of Yasumi is to be powerful while remaining lightweight, by utilizing PHP native classes wherever possible.
 Yasumi's calculation is provider-based (i.e. by country/state) so it is easy to add new holiday providers that calculate
@@ -55,19 +55,23 @@ holidays. The methods of Yasumi can be used to get a holiday's date and name in 
 <p>Currently the following holiday providers are implemented:</p>
 
 <ul>
+<li>Belgium</li>
+<li>Denmark</li>
+<li>Finland</li>
+<li>France (including the departments Bas-Rhin, Haut-Rhin and Moselle)</li>
+<li>Germany</li>
+<li>Greece</li>
+<li>Italy</li>
 <li>Japan</li>
 <li>Netherlands</li>
-<li>Belgium</li>
-<li>USA</li>
-<li>Italy</li>
-<li>France</li>
-<li>Spain (including the autonomous communities Andalusia, Aragon, Asturias, Balearic Islands, Basque Country, 
-     Canary Islands, Cantabria, Castile and León, Castilla-La Mancha, Ceuta, Community of Madrid, Extremadura, 
-     Galicia, La Rioja, Melilla, Navarre, Region of Murcia, Valencian Community)</li>
-<li>Denmark</li>
+<li>New Zealand</li>
 <li>Norway</li>
+<li>Poland</li>
+<li>Spain (including the autonomous communities Andalusia, Aragon, Asturias, BalearicIslands, BasqueCountry,
+CanaryIslands, Cantabria, Castile and León, Castilla-La Mancha, Catalonia, Ceuta, Community of Madrid, Extremadura,
+Galicia, La Rioja, Melilla, Navarre, Region of Murcia, Valencian Community)</li>
 <li>Sweden</li>
-<li>Finland</li>
+<li>USA</li>
 </ul>
 
 <p>Yasumi has the following filters to allow you to filter only certain type of holidays:</p>
@@ -83,6 +87,16 @@ holidays. The methods of Yasumi can be used to get a holiday's date and name in 
 <p>Yasumi focuses initially on a country's official holidays and non-working days. If time permits, other type of holidays
 will be added. The goal is to issue a new release every month and targeting to have at least 2 new holiday providers in
 each release :)</p>
+
+<h3>
+<a id="roadmap" class="anchor" href="#roadmap" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Roadmap</h3>
+
+<ul>
+<li>United Kingdom</li>
+<li>Australia</li>
+<li>Canada</li>
+<li>India</li>
+</ul>
 
 <h2>
 <a id="system-requirements" class="anchor" href="#system-requirements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>System Requirements</h2>
@@ -106,25 +120,29 @@ folder:</p>
 
 <div class="highlight highlight-source-shell"><pre>$ phpunit</pre></div>
 
-<p>Yasumi has over 1100 unit tests with multiple iterations of assertions. Since Yasumi is using randomized years for asserting
+<p>Yasumi has over 980 unit tests with multiple iterations of assertions. Since Yasumi is using randomized years for asserting
 the holidays, multiple iterations of assertions are executed to ensure the holidays are calculated in a large number
 of years.</p>
 
 <p>The tests are organized in some test suites to make testing a bit more easier:</p>
 
 <ul>
-<li>Base       : For testing the base functionality of Yasumi</li>
-<li>Japan      : For separately testing the Japan Holiday Provider</li>
-<li>Netherlands: For separately testing the Netherlands Holiday Provider</li>
-<li>Belgium    : For separately testing the Belgium Holiday Provider</li>
-<li>USA        : For separately testing the USA Holiday Provider</li>
-<li>Italy      : For separately testing the Italy Holiday Provider</li>
-<li>France     : For separately testing the France Holiday Provider</li>
-<li>Spain      : For separately testing the Spain Holiday Provider</li>
-<li>Denmark    : For separately testing the Denmark Holiday Provider</li>
-<li>Norway     : For separately testing the Norway Holiday Provider</li>
-<li>Sweden     : For separately testing the Sweden Holiday Provider</li>
-<li>Finland    : For separately testing the Finland Holiday Provider</li>
+<li>Base        : For testing the base functionality of Yasumi</li>
+<li>Belgium     : For separately testing the Belgium Holiday Provider</li>
+<li>Denmark     : For separately testing the Denmark Holiday Provider</li>
+<li>Finland     : For separately testing the Finland Holiday Provider</li>
+<li>France      : For separately testing the France Holiday Provider</li>
+<li>Germany     : For separately testing the Germany Holiday Provider</li>
+<li>Greece      : For separately testing the Greece Holiday Provider</li>
+<li>Italy       : For separately testing the Italy Holiday Provider</li>
+<li>Japan       : For separately testing the Japan Holiday Provider</li>
+<li>Netherlands : For separately testing the Netherlands Holiday Provider</li>
+<li>NewZealand  : For separately testing the New Zealand Holiday Provider</li>
+<li>Norway      : For separately testing the Norway Holiday Provider</li>
+<li>Poland      : For separately testing the Poland Holiday Provider</li>
+<li>Spain       : For separately testing the Spain Holiday Provider</li>
+<li>Sweden      : For separately testing the Sweden Holiday Provider</li>
+<li>USA         : For separately testing the USA Holiday Provider</li>
 </ul>
 
 <h2>
@@ -159,6 +177,7 @@ of years.</p>
 <span class="pl-s1"><span class="pl-c">// 'veteransDay'</span></span>
 <span class="pl-s1"><span class="pl-c">// 'thanksgivingDay'</span></span>
 <span class="pl-s1"><span class="pl-c">// 'christmasDay'</span></span>
+<span class="pl-s1"><span class="pl-c">// 'substituteHoliday:christmasDay'</span></span>
 <span class="pl-s1"></span>
 <span class="pl-s1"><span class="pl-c">// Get a list all of the holiday dates</span></span>
 <span class="pl-s1"><span class="pl-k">foreach</span> (<span class="pl-smi">$holidays</span><span class="pl-k">-&gt;</span>getHolidayDates() <span class="pl-k">as</span> <span class="pl-smi">$date</span>) {</span>
@@ -220,9 +239,33 @@ of years.</p>
 <span class="pl-s1"><span class="pl-c">// 'Boxing Day'</span></span></pre></div>
 
 <h2>
+<a id="contributing-to-yasumi" class="anchor" href="#contributing-to-yasumi" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contributing to Yasumi</h2>
+
+<p>Contributions are encouraged and welcome; we are always happy to get feedback or even pull requests. 
+In order to keep the code consistent, please use the following command after your completed work:</p>
+
+<div class="highlight highlight-source-shell"><pre>$ composer php-cs-fixer</pre></div>
+
+<p>This will check/correct all the code for the PSR-2 Coding Standard using the wonderful <a href="http://cs.sensiolabs.org/">php-cs-fixer</a> .</p>
+
+<p>If you like to add a new Holiday Provider, the best starting point is to use on of the existing holiday providers. There
+are a few things to keep consider:</p>
+
+<ol>
+<li>Ensure your new Holiday Provider contains all the necessary unit tests.</li>
+<li>Next to the file 'BaseTestCase.php', a file called 'Test.php' needs to be present. This file
+needs to include region/country level tests and requires assertion of all expected holidays.</li>
+<li>All the unit tests and the implementation Holiday Provider require to have the correct locale, timezone and
+region/countryname.</li>
+<li>As almost all of the tests use automatic iterations, make sure the year for which the test is executed is a valid 
+year. Some holidays are only established from a certain year and having the test yearnumber smaller than the minimum
+establishment year (amongst all holidays) can result in false errors.</li>
+</ol>
+
+<h2>
 <a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
 
-<p>The MIT License (MIT). Please see <a href="LICENSE">LICENSE</a> for more information.</p>
+<p>Yasumi is open-sourced software licensed under the MIT License (MIT). Please see <a href="LICENSE">LICENSE</a> for more information.</p>
 
 <h2>
 <a id="information-sources" class="anchor" href="#information-sources" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Information Sources</h2>
