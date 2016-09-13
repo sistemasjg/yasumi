@@ -24,18 +24,34 @@
 <h1>
 <a id="yasumi" class="anchor" href="#yasumi" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Yasumi</h1>
 
-<p>Yasumi (Japanese for 'Holiday') is an easy PHP library to help you calculate the dates and names of holidays and other
+<p>Yasumi (Japanese for 'Holiday'「休み」) is an easy PHP library to help you calculate the dates and names of holidays and other
 special celebrations from various countries/states. Many services exist on the internet that provide holidays, however
 are either not free or offer only limited information. In addition, no complete PHP library seems to exist today
 that covers a wide range of holidays and countries, except maybe <a href="https://pear.php.net/package/Date_Holidays">PEAR's Date_Holidays</a> 
 which unfortunately hasn't been updated for a long time.</p>
 
 <p>The goal of Yasumi is to be powerful while remaining lightweight, by utilizing PHP native classes wherever possible.
-Yasumi's calculation is provider-based (i.e. by country/state) so it is easy to add new holiday providers that calculate
+Yasumi's calculation is provider-based (i.e. by country/state) sos easy to add new holiday providers that calculate
 holidays. The methods of Yasumi can be used to get a holiday's date and name in various languages.</p>
 
+<h1>
+<a id="contents" class="anchor" href="#contents" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contents</h1>
+
+<ul>
+<li><a href="#highlights">Highlights</a></li>
+<li><a href="#requirements">System Requirements</a></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#usage">Basic Usage</a></li>
+<li><a href="#testing">Testing</a></li>
+<li><a href="#contributing">Contributing</a></li>
+<li><a href="#credits">Credits</a></li>
+<li><a href="#license">License</a></li>
+<li><a href="#license">Sources</a></li>
+</ul>
+
 <h2>
-<a id="highlights" class="anchor" href="#highlights" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Highlights</h2>
+<a id="highlights" class="anchor" href="#highlights" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Highlights<a name="highlights"></a>
+</h2>
 
 <ul>
 <li>Simple API</li>
@@ -52,16 +68,17 @@ holidays. The methods of Yasumi can be used to get a holiday's date and name in 
 <li>Composer ready, <a href="http://www.php-fig.org/psr/psr-2/">PSR-2</a> compliant</li>
 </ul>
 
-<p>Currently the following holiday providers are implemented:</p>
+<p>Yasumi currently supports 57 countries (including subregions):</p>
 
 <ul>
 <li>Belgium</li>
 <li>Brazil</li>
+<li>Croatia</li>
 <li>Czech Republic</li>
 <li>Denmark</li>
 <li>Finland</li>
-<li>France (including the sub-regions Bas-Rhin, Haut-Rhin and Moselle)</li>
-<li>Germany</li>
+<li>France (including the sub-regions Bas-Rhin, Haut-Rhin, Moselle)</li>
+<li>Germany (including the sub-regions Baden-Württemberg, Bavaria, Berlin, Brandenburg, Bremen, Hamburg, Hesse, Lower Saxony, Mecklenburg-Vorpommern, North Rhine-Westphalia, Rhineland-Palatinate, Saarland, Saxony, Saxony-Anhalt, Schleswig-Holstein, Thuringia)</li>
 <li>Greece</li>
 <li>Italy</li>
 <li>Japan</li>
@@ -69,12 +86,10 @@ holidays. The methods of Yasumi can be used to get a holiday's date and name in 
 <li>New Zealand</li>
 <li>Norway</li>
 <li>Poland</li>
-<li>Spain (including the sub-regions Andalusia, Aragon, Asturias, Balearic Islands, Basque Country, Canary Islands, 
-     Cantabria, Castile and León, Castilla-La Mancha, Catalonia, Ceuta, Community of Madrid, Extremadura, Galicia,
-     La Rioja, Melilla, Navarre, Region of Murcia, Valencian Community)</li>
+<li>Spain (including the sub-regions Andalusia, Aragon, Asturias, Balearic Islands, Basque Country, Canary Islands, Cantabria, Castile and León, Castile-La Mancha, Catalonia, Ceuta, Madrid Autonomous Community, Extremadura, Galicia, La Rioja, Melilla, Navarra Chartered Community, Murcia Region, Valencian Community)</li>
 <li>Sweden</li>
-<li>USA</li>
-<li>UnitedKingdom</li>
+<li>United States</li>
+<li>United Kingdom</li>
 </ul>
 
 <p>Yasumi has the following filters to allow you to filter only certain type of holidays:</p>
@@ -95,6 +110,7 @@ each release :)</p>
 <a id="roadmap" class="anchor" href="#roadmap" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Roadmap</h3>
 
 <ul>
+<li>State Holidays for Germany</li>
 <li>Taiwan</li>
 <li>Australia</li>
 <li>Canada</li>
@@ -102,13 +118,16 @@ each release :)</p>
 </ul>
 
 <h2>
-<a id="system-requirements" class="anchor" href="#system-requirements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>System Requirements</h2>
+<a id="system-requirements" class="anchor" href="#system-requirements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>System Requirements<a name="requirements"></a>
+</h2>
 
 <p>You need <strong>PHP &gt;= 5.5.0</strong> to use <code>azuyalabs/yasumi</code> but the latest stable version of PHP is recommended.
-Yasumi is verified and tested on PHP 5.5, 5.6 and 7.0.</p>
+Yasumi is verified and tested on PHP 5.5, 5.6 and 7.0. Although Yasumi will work with PHP 5.5, only PHP version 5.6 or
+higher is supported. </p>
 
 <h2>
-<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation<a name="installation"></a>
+</h2>
 
 <p>Install <code>azuyalabs/yasumi</code> using Composer.</p>
 
@@ -116,7 +135,8 @@ Yasumi is verified and tested on PHP 5.5, 5.6 and 7.0.</p>
 </code></pre>
 
 <h2>
-<a id="basic-usage" class="anchor" href="#basic-usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Basic Usage</h2>
+<a id="basic-usage" class="anchor" href="#basic-usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Basic Usage<a name="usage"></a>
+</h2>
 
 <div class="highlight highlight-text-html-php"><pre><span class="pl-pse">&lt;?php</span><span class="pl-s1"></span>
 <span class="pl-s1"><span class="pl-c">// Require the composer auto loader</span></span>
@@ -209,14 +229,15 @@ Yasumi is verified and tested on PHP 5.5, 5.6 and 7.0.</p>
 <span class="pl-s1"><span class="pl-c">// 'Boxing Day'</span></span></pre></div>
 
 <h2>
-<a id="testing" class="anchor" href="#testing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Testing</h2>
+<a id="testing" class="anchor" href="#testing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Testing<a name="testing"></a>
+</h2>
 
 <p>Yasumi has a <a href="https://phpunit.de/">PHPUnit</a> test suite. To run the tests, run the following command from the project 
 folder:</p>
 
 <div class="highlight highlight-source-shell"><pre>$ phpunit</pre></div>
 
-<p>Yasumi has over 1100 unit tests with multiple iterations of assertions. Since Yasumi is using randomized years for asserting
+<p>Yasumi has over 1200 unit tests with multiple iterations of assertions. Since Yasumi is using randomized years for asserting
 the holidays, multiple iterations of assertions are executed to ensure the holidays are calculated in a large number
 of years.</p>
 
@@ -226,6 +247,7 @@ of years.</p>
 <li>"Base"          : For testing the base functionality of Yasumi</li>
 <li>"Belgium"       : For separately testing the Belgium Holiday Provider</li>
 <li>"Brazil"        : For separately testing the Brazil Holiday Provider</li>
+<li>"Croatia"       : For separately testing the Croatia Holiday Provider</li>
 <li>"CzechRepublic" : For separately testing the Czech Republic Holiday Provider</li>
 <li>"Denmark"       : For separately testing the Denmark Holiday Provider</li>
 <li>"Finland"       : For separately testing the Finland Holiday Provider</li>
@@ -245,36 +267,40 @@ of years.</p>
 </ul>
 
 <h2>
-<a id="contributing-to-yasumi" class="anchor" href="#contributing-to-yasumi" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contributing to Yasumi</h2>
+<a id="testing-1" class="anchor" href="#testing-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Testing</h2>
 
-<p>Contributions are encouraged and welcome; we are always happy to get feedback or even pull requests. 
-In order to keep the code consistent, please use the following command after your completed work:</p>
+<p>Run the tests with:</p>
 
-<div class="highlight highlight-source-shell"><pre>$ composer php-cs-fixer</pre></div>
+<div class="highlight highlight-source-shell"><pre>$ composer <span class="pl-c1">test</span></pre></div>
 
-<p>This will check/correct all the code for the PSR-2 Coding Standard using the wonderful <a href="http://cs.sensiolabs.org/">php-cs-fixer</a> .</p>
+<p>or alternatively run with:</p>
 
-<p>If you like to add a new Holiday Provider, the best starting point is to use on of the existing holiday providers. There
-are a few things to keep consider:</p>
-
-<ol>
-<li>Ensure your new Holiday Provider contains all the necessary unit tests.</li>
-<li>Next to the file 'BaseTestCase.php', a file called 'Test.php' needs to be present. This file
-needs to include region/country level tests and requires assertion of all expected holidays.</li>
-<li>All the unit tests and the implementation Holiday Provider require to have the correct locale, timezone and
-region/country name.</li>
-<li>As almost all of the tests use automatic iterations, make sure the year for which the test is executed is a valid 
-year. Some holidays are only established from a certain year and having the test year number smaller than the minimum
-establishment year (amongst all holidays) can result in false errors.</li>
-</ol>
+<div class="highlight highlight-source-shell"><pre>$ vendor/bin/phpunit</pre></div>
 
 <h2>
-<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contributing<a name="contributing"></a>
+</h2>
+
+<p>Please see <a href="CONTRIBUTING.md">CONTRIBUTING</a> for details.</p>
+
+<h2>
+<a id="credits" class="anchor" href="#credits" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Credits<a name="credits"></a>
+</h2>
+
+<ul>
+<li><a href="https://github.com/stelgenhof">Sacha Telgenhof</a></li>
+<li><a href="../../contributors">All Contributors</a></li>
+</ul>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License<a name="license"></a>
+</h2>
 
 <p>Yasumi is open-sourced software licensed under the MIT License (MIT). Please see <a href="LICENSE">LICENSE</a> for more information.</p>
 
 <h2>
-<a id="information-sources" class="anchor" href="#information-sources" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Information Sources</h2>
+<a id="sources" class="anchor" href="#sources" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sources<a name="sources"></a>
+</h2>
 
 <ul>
 <li>
