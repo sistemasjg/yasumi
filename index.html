@@ -27,11 +27,11 @@
 <p>Yasumi (Japanese for 'Holiday'「休み」) is an easy PHP library to help you calculate the dates and names of holidays and other
 special celebrations from various countries/states. Many services exist on the internet that provide holidays, however
 are either not free or offer only limited information. In addition, no complete PHP library seems to exist today
-that covers a wide range of holidays and countries, except maybe <a href="https://pear.php.net/package/Date_Holidays">PEAR's Date_Holidays</a> 
+that covers a wide range of holidays and countries, except maybe <a href="https://pear.php.net/package/Date_Holidays">PEAR's Date_Holidays</a>
 which unfortunately hasn't been updated for a long time.</p>
 
 <p>The goal of Yasumi is to be powerful while remaining lightweight, by utilizing PHP native classes wherever possible.
-Yasumi's calculation is provider-based (i.e. by country/state) sos easy to add new holiday providers that calculate
+Yasumi's calculation is provider-based (i.e. by country/state) so it's easy to add new holiday providers that calculate
 holidays. The methods of Yasumi can be used to get a holiday's date and name in various languages.</p>
 
 <h1>
@@ -59,7 +59,7 @@ holidays. The methods of Yasumi can be used to get a holiday's date and name in 
 <li>Common Holiday Providers</li>
 <li>Global Translations</li>
 <li>Implements ArrayIterator to easily process a provider's holidays</li>
-<li>Filters enabling to easily select certain holiday types (Official, Observed, Bank, Seasonal or Other) </li>
+<li>Filters enabling to easily select certain holiday types (Official, Observed, Bank, Seasonal or Other)</li>
 <li>Fully documented</li>
 <li>Fully Unit tested</li>
 <li>Framework-agnostic</li>
@@ -68,9 +68,10 @@ holidays. The methods of Yasumi can be used to get a holiday's date and name in 
 <li>Composer ready, <a href="http://www.php-fig.org/psr/psr-2/">PSR-2</a> compliant</li>
 </ul>
 
-<p>Yasumi currently supports 59 countries (including sub-regions):</p>
+<p>Yasumi currently supports 62 holiday providers (23 countries and 39 sub-regions):</p>
 
 <ul>
+<li>Australia (including the sub-region Victoria)</li>
 <li>Belgium</li>
 <li>Brazil</li>
 <li>Croatia</li>
@@ -86,6 +87,7 @@ holidays. The methods of Yasumi can be used to get a holiday's date and name in 
 <li>New Zealand</li>
 <li>Norway</li>
 <li>Poland</li>
+<li>Portugal</li>
 <li>Slovakia</li>
 <li>Spain (including the sub-regions Andalusia, Aragon, Asturias, Balearic Islands, Basque Country, Canary Islands, Cantabria, Castile and León, Castile-La Mancha, Catalonia, Ceuta, Madrid Autonomous Community, Extremadura, Galicia, La Rioja, Melilla, Navarra Chartered Community, Murcia Region, Valencian Community)</li>
 <li>Sweden</li>
@@ -112,9 +114,7 @@ each release :)</p>
 <a id="roadmap" class="anchor" href="#roadmap" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Roadmap</h3>
 
 <ul>
-<li>State Holidays for Germany</li>
 <li>Taiwan</li>
-<li>Australia</li>
 <li>Canada</li>
 <li>India</li>
 </ul>
@@ -125,7 +125,7 @@ each release :)</p>
 
 <p>You need <strong>PHP &gt;= 5.5.0</strong> to use <code>azuyalabs/yasumi</code> but the latest stable version of PHP is recommended.
 Yasumi is verified and tested on PHP 5.5, 5.6 and 7.0. Although Yasumi will work with PHP 5.5, only PHP version 5.6 or
-higher is supported. </p>
+higher is supported.</p>
 
 <h2>
 <a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation<a name="installation"></a>
@@ -239,12 +239,12 @@ higher is supported. </p>
 <a id="testing" class="anchor" href="#testing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Testing<a name="testing"></a>
 </h2>
 
-<p>Yasumi has a <a href="https://phpunit.de/">PHPUnit</a> test suite. To run the tests, run the following command from the project 
+<p>Yasumi has a <a href="https://phpunit.de/">PHPUnit</a> test suite. To run the tests, run the following command from the project
 folder:</p>
 
 <div class="highlight highlight-source-shell"><pre>$ phpunit</pre></div>
 
-<p>Yasumi has over 1300 unit tests with multiple iterations of assertions. Since Yasumi is using randomized years for asserting
+<p>Yasumi has over 1500 unit tests with multiple iterations of assertions. Since Yasumi is using randomized years for asserting
 the holidays, multiple iterations of assertions are executed to ensure the holidays are calculated in a large number
 of years.</p>
 
@@ -252,6 +252,7 @@ of years.</p>
 
 <ul>
 <li>"Base"          : For testing the base functionality of Yasumi</li>
+<li>"Australia"     : For separately testing the Australia Holiday Provider</li>
 <li>"Belgium"       : For separately testing the Belgium Holiday Provider</li>
 <li>"Brazil"        : For separately testing the Brazil Holiday Provider</li>
 <li>"Croatia"       : For separately testing the Croatia Holiday Provider</li>
@@ -267,6 +268,7 @@ of years.</p>
 <li>"NewZealand"    : For separately testing the New Zealand Holiday Provider</li>
 <li>"Norway"        : For separately testing the Norway Holiday Provider</li>
 <li>"Poland"        : For separately testing the Poland Holiday Provider</li>
+<li>"Portugal"      : For separately testing the Portugal Holiday Provider</li>
 <li>"Slovakia"      : For separately testing the Slovakia Holiday Provider</li>
 <li>"Spain"         : For separately testing the Spain Holiday Provider</li>
 <li>"Sweden"        : For separately testing the Sweden Holiday Provider</li>
@@ -312,8 +314,7 @@ of years.</p>
 </h2>
 
 <ul>
-<li>
-<a href="https://en.wikipedia.org/wiki/Main_Page">Wikipedia</a> </li>
+<li><a href="https://en.wikipedia.org/wiki/Main_Page">Wikipedia</a></li>
 <li>
 <a href="http://www.timeanddate.com/">Timeanddate.com</a><br>
 </li>
