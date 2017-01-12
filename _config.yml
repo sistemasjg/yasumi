@@ -1,8 +1,0 @@
-title: Yasumi
-description: Yasumi is an easy PHP Library for calculating national holidays.
-google_analytics: 
-show_downloads: true
-theme: jekyll-theme-cayman
-
-gems:
-  - jekyll-mentions
