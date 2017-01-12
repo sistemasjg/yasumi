@@ -9,7 +9,7 @@ that covers a wide range of holidays and countries, except maybe [PEAR's Date_Ho
 which unfortunately hasn't been updated for a long time.
 
 The goal of Yasumi is to be powerful while remaining lightweight, by utilizing PHP native classes wherever possible.
-Yasumi's calculation is provider-based (i.e. by country/state) sos easy to add new holiday providers that calculate
+Yasumi's calculation is provider-based (i.e. by country/state) so it's easy to add new holiday providers that calculate
 holidays. The methods of Yasumi can be used to get a holiday's date and name in various languages.
 
 
